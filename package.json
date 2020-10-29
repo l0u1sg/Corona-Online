@@ -1,0 +1,25 @@
+{
+  "name": "corona-online",
+  "version": "1.0.0",
+  "description": "Corona Online",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://louisgallet95@github.com/louisgallet95/Corona-Online.git"
+  },
+  "author": "Louis Gallet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/louisgallet95/Corona-Online/issues"
+  },
+  "homepage": "https://github.com/louisgallet95/Corona-Online#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "nodemon": "^2.0.6"
+  }
+}
