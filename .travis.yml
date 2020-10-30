@@ -6,4 +6,5 @@ before_install:
 cache: npm
 install:
   - npm install
-script: npm start startDev
+  - npm install -g npm-check
+script: npm start test
