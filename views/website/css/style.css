@@ -1,9 +1,19 @@
 .all {
   font-family: "Open Sans", sans-serif;
 }
-.presentation {
+
+.nojs {
+  font-size: 68px;
+  text-align: center;
+  color: red;
+}
+
+.intro {
   text-align: center;
   font-family: "Open Sans", sans-serif;
   height: 10cm;
   vertical-align: middle;
+}
+.title {
+  font-size: 55px;
 }
