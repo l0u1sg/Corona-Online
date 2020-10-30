@@ -9,4 +9,4 @@ app.get("/", (req, res) => {
   res.render("maintenance/index.ejs");
 });
 
-app.listen(8800);
+app.listen(80);
