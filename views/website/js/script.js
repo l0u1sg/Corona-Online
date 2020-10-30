@@ -1,4 +1,5 @@
 const axios = require("axios");
+const Swal = require("sweetalert2");
 
 function fetchData() {
   axios.get("https://api.covid19api.com/summary").then((res) => {
@@ -22,3 +23,10 @@ function fetchData() {
 }
 
 fetchData();
+
+Swal.fire({
+  title: "Vous êtes sur une bêta",
+  text: "Des bugs peuvent être rencontrés",
+  icon: "warning",
+  confirmButtonText: "OK",
+});

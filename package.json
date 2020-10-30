@@ -25,6 +25,7 @@
     "express": "^4.17.1",
     "method-override": "^3.0.0",
     "nodemon": "^2.0.6",
-    "requirejs": "^2.3.6"
+    "requirejs": "^2.3.6",
+    "sweetalert2": "^10.9.0"
   }
 }
