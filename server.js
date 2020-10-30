@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const routeur = express.Router();
+const _httpErrorPages = require("http-error-pages");
 const port = process.env.PORT || 3000;
 
 app.set("view-engine", "ejs");
@@ -11,6 +12,11 @@ app.get("/", (req, res) => {
 });
 app.get("/site", (req, res) => {
   res.render("website/index.ejs");
+});
+
+_httpErrorPages.express(app, {
+  lang: "fr_FR",
+  footer: "Problem ? corona.online@gallet.ga",
 });
 
 app.listen(port, function () {
