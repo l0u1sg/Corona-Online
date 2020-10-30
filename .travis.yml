@@ -7,4 +7,4 @@ cache: npm
 install:
   - npm install
   - npm install -g npm-check
-script: npm start test
+script: npm-check
