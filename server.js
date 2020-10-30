@@ -5,7 +5,7 @@ const routeur = express.Router();
 app.set("view-engine", "ejs");
 app.use(express.static(__dirname + "/views"));
 
-routeur.get("/", (res) => {
+app.get("/", (req, res) => {
   res.render("index.ejs");
 });
 
