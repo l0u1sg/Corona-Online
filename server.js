@@ -10,6 +10,11 @@ app.get("/", (req, res) => {
   res.render("maintenance/index.ejs");
 });
 
+app.get("/v3", (req, res) =>
+{
+  res.render("website/index.ejs");
+})
+
 
 _httpErrorPages.express(app, {
   lang: "fr_FR",
