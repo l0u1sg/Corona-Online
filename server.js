@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const routeur = express.Router();
 const _httpErrorPages = require("http-error-pages");
 const port = process.env.PORT || 3000;
 
