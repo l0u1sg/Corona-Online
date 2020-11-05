@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Corona Online",
   "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "test": "npm-check",
     "startDev": "nodemon server.js",
