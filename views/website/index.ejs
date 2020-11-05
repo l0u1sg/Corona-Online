@@ -1,10 +1,9 @@
 <head>
   <title>Corona Online</title>
   <link rel="stylesheet" type="text/css" href="../website/css/style.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
   <div class="all">
@@ -13,30 +12,47 @@
         Si vous voyez ce texte, merci d'activer JavaScript sur votre naviguateur
       </noscript>
     </div>
+    <div class='topnav'>
+      <a class="active" href="#home">Corona Online | Coronavirus Tracker</a>
+      <a href="https://ncovid19api.herokuapp.com/?">API</a>
+      <a href="https://github.com/l0u1sg/Corona-Online">GitHub</a>
+      <a href="#about">A Propos</a>
+    </div>
     <section id="firstView">
       <div class="intro">
-        <h1 class="title">Bienvenue sur Corona Online</h1>
+        <p class="title">Bienvenue sur Corona Online</p>
+        <p class="presentation">Un tracker pour le Coronavirus (COVID-19)</p>
         <br />
-        <h2>Les stats en un coup d'oeuil :</h2>
-        <h3 id="totalCase">total.case.text</h3>
-        <h3 id="newDeaths">new.death.text</h3>
-        <h3 id="newRecovered">new.recovered.text</h3>
+        <p>Les stats en un coup d'œuil :</p>
+        <div class="stats">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="totalCaseSvg" viewBox="0 0 24 24">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"></path>
+          </svg>
+        <p id="totalCase" class="totalCaseTxt">total.case.text</p>
+        <br> 
+        <p class=totalCaseDescription>Nombre de cas total</p>
+        <br>
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="newDeathsSvg" viewBox="0 0 24 24">
+          <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"></path>
+        </svg>
+        <p id="newDeaths" class='newDeaths'>new.death.text</p>
+        <p>Nombre de décès</p>
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="test" viewBox="0 0 24 24">
+          <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"></path>
+        </svg>
+        <p id="newRecovered" class='newRecovered'>new.recovered.text</p>
+        <p>Nombre de sauvés</p>
+      </div>
       </div>
     </section>
-    <section id="details">
-      <div class="details">
-        <h1>Dans le détail :</h1>
-        <table id="details_table">
-          <tr>
-            <td>&nbsp;</td>
-            <td>Cas total</td>
-            <td>Nouveaux cas</td>
-            <td>Nouveaux décès</td>
-            <td>Nouveaux guéris</td>
-          </tr>
-        </table>
-      </div>
-    </section>
+  
+    
   </div>
   <script src="../website/js/bundle.js"></script>
 </body>

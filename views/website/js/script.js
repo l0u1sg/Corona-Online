@@ -11,17 +11,14 @@ function fetchData() {
     const newDeathsFrance = res.data.Countries[59].NewDeaths;
     const newRecoveredFrance = res.data.Countries[59].NewRecovered;
     document.getElementById("totalCase").innerHTML =
-      "Nous avons " +
-      newConfirmedGlobal +
-      " nouveaux cas dans le monde par rapport à hier";
+      
+      newConfirmedGlobal ;
     document.getElementById("newDeaths").innerHTML =
-      "Nous avons " +
-      newDeathsGlobal +
-      " nouveaux décès dans le monde par rapport à hier";
+    
+      newDeathsGlobal ;
     document.getElementById("newRecovered").innerHTML =
-      "Nous avons " +
-      newRecoveredGlobal +
-      " nouvelles personnes sauvées dans le monde par rapport à hier";
+      
+      newRecoveredGlobal ;
   });
 }
 
