@@ -9,7 +9,7 @@
   "scripts": {
     "test": "npm-check",
     "startDev": "nodemon server.js",
-    "build": "browserify ./views/website/js/script.js -o ./views/website/js/bundle.js"
+    "buildJS": "browserify ./views/website/js/script.js -o ./views/website/js/bundle.js"
   },
   "repository": {
     "type": "git",
