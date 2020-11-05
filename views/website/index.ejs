@@ -1,58 +1,147 @@
+
+
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Corona Online</title>
-  <link rel="stylesheet" type="text/css" href="../website/css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>COVID-19 Tracker</title>
+  <meta name="description" content="Track the spread of the Coronavirus Covid-19 outbreak">
 
+  <link rel="stylesheet" href="../website/assets/css/tachyons.min.css">
+  <link rel="stylesheet" href="../website/assets/css/site.css?v=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-</head>
-<body>
-  <div class="all">
-    <div class="nojs">
-      <noscript>
-        Si vous voyez ce texte, merci d'activer JavaScript sur votre naviguateur
-      </noscript>
-    </div>
-    <div class='topnav'>
-      <a class="active" href="#home">Corona Online | Coronavirus Tracker</a>
-      <a href="https://ncovid19api.herokuapp.com/?">API</a>
-      <a href="https://github.com/l0u1sg/Corona-Online">GitHub</a>
-      <a href="#about">A Propos</a>
-    </div>
-    <section id="firstView">
-      <div class="intro">
-        <p class="title">Bienvenue sur Corona Online</p>
-        <p class="presentation">Un tracker pour le Coronavirus (COVID-19)</p>
-        <br />
-        <p>Les stats en un coup d'œuil :</p>
-        <div class="stats">
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="totalCaseSvg" viewBox="0 0 24 24">
-            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"></path>
-          </svg>
-        <p id="totalCase" class="totalCaseTxt">total.case.text</p>
-        <br> 
-        <p class=totalCaseDescription>Nombre de cas total</p>
-        <br>
-        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="newDeathsSvg" viewBox="0 0 24 24">
-          <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
-          <circle cx="9" cy="7" r="4"></circle>
-          <path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"></path>
-        </svg>
-        <p id="newDeaths" class='newDeaths'>new.death.text</p>
-        <p>Nombre de décès</p>
-        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="test" viewBox="0 0 24 24">
-          <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
-          <circle cx="9" cy="7" r="4"></circle>
-          <path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"></path>
-        </svg>
-        <p id="newRecovered" class='newRecovered'>new.recovered.text</p>
-        <p>Nombre de sauvés</p>
-      </div>
-      </div>
-    </section>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162093056-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-162093056-1');
+  </script>
+
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon//apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon//apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon//apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon//apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon//apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon//apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon//apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon//apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="assets/favicon//android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon//favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon//favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon//manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="assets/favicon//ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   
-    
-  </div>
-  <script src="../website/js/bundle.js"></script>
+  
+  <!-- Chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css" />
+  <!-- Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+</head>
+<body class="">
+  <div class="h-100 midnight-blue pa3 ph0-l pv6-l">
+      <div class="center mw7">
+          <nav class="db dt-l w-100 border-box pa3 ">
+              <div class="switch-wrapper">
+                  <img class="theme-icon" src="../website/assets/img/moon.svg">
+                  <div class="theme-switch">
+                      <div class="switch"></div>
+                  </div>
+              </div>
+          </nav>
+      <article class="cf">
+        <header class="header mw5 mw7-ns tl pa3">
+          <div class="fl w-50-ns pa2">
+            <noscript>
+              <h1 class="mt0">Merci d'activer JavaScript sur votre naviguateur</h1>
+            </noscript>
+          <h1 class="mt0">🦠 COVID-19 Tracker</h1>
+          <p class="lh-copy measure black-60">
+            Visualisez rapidement les dernières statistiques du Coronavirus (COVID-19)
+          </p>
+        </div>
+
+        </header>
+
+        <div class="fl w-50 tc stat-card">
+          <div class="card-box tilebox-one">
+            <span class="icon">
+              <img src="../website/assets/img/cases.svg">
+            </span>
+            <h6 class="black-40 ttu tl">Nombre total de cas</h6>
+            <h3 class="black tl" id="totalCaseTxt" data-plugin="counterup">totalcase.txt</h3>
+          </div>
+        </div>
+        <div class="fl w-50 tc stat-card">
+          <div class="card-box tilebox-one">
+            <span class="icon">
+              <img src="../website/assets/img/deaths.svg">
+            </span>
+            <h6 class="black-40 ttu tl">Nombre total de décès</h6>
+            <h3 class="black tl" id="totalDeathsTxt" data-plugin="counterup">totaldeaths.txt</h3>
+          </div>
+        </div>
+      </article>
+      <article class="cf">
+        <div class="fl w-50 tc stat-card">
+          <div class="card-box tilebox-one">
+            <span class="icon"><img src="../website/assets/img/recoveries.svg"></span>
+            <h6 class="black-40 ttu tl">Nombre total de guérisons</h6>
+            <h3 class="black tl" id="totalRecoveriesTxt" data-plugin="counterup">totalrecoveries.txt</h3>
+          </div>
+        </div>
+        <div class="fl w-50 tc stat-card">
+          <div class="card-box tilebox-one">
+            <span class="icon">
+              <img src="../website/assets/img/active_cases.svg">
+            </span>
+            <h6 class="black-40 ttu tl">Cas actifs</h6>
+            <h3 class="black tl" id="activeCasesTxt" data-plugin="counterup">activecases.txt</h3>
+          </div>
+        </div>
+      </article>
+      <div class="mt1">
+        <a href="https://github.com/l0u1sg/" title="Louis Gallet" class="f4 dib pr2 mid-gray dim">👨 Fait par Louis Gallet</a>
+        <a href="https://kyler.design" title="Kyler Phillips" class="f4 dib pr2 mid-gray dim">🙋‍♂️ Basé sur une idée de Kyler Phillips</a>
+        <a href="https://github.com/NovelCOVID/API" title="Data Source" class="f4 dib pr2 mid-gray dim">📊 Sources des données</a>
+      </div>
+     <script>
+
+      function isDay() {
+  const hours = (new Date()).getHours();
+  return (hours >= 6 && hours < 19);
+}
+/* Dynamically change theme */
+      if (isDay() == false) {
+          $("body").toggleClass("light-theme");
+      } else {
+          $("body").toggleClass("");
+      }
+
+      $(".theme-switch").on("click", () => {
+          $("body").toggleClass("light-theme");
+      });
+  </script>
+
+  <script>// Add basic styles for active tabs
+$('.tabs__menu-item').on('click', function() {
+  $(this).addClass('bg-white').addClass('red');
+  $(this).siblings().removeClass('red');
+});</script>
+
+<script src="../website/assets/js/bundle.js"></script>
+
 </body>
+</html>

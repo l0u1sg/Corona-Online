@@ -7,7 +7,7 @@ app.set("view-engine", "ejs");
 app.use(express.static(__dirname + "/views"));
 
 app.get("/", (req, res) => {
-  res.render("website/index.ejs");
+  res.render("maintenance/index.ejs");
 });
 
 
@@ -17,5 +17,5 @@ _httpErrorPages.express(app, {
 });
 
 app.listen(port, function () {
-  console.log("Server started successfully");
+  console.log(`Corona-Online listen at ${port} port`);
 });
