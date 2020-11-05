@@ -8,10 +8,7 @@ app.set("view-engine", "ejs");
 app.use(express.static(__dirname + "/views"));
 
 app.get("/", (req, res) => {
-  res.render("maintenance/index.ejs");
-});
-app.get("/site", (req, res) => {
-  res.render("website/index.ejs");
+  res.render("webiste/index.ejs");
 });
 
 _httpErrorPages.express(app, {
