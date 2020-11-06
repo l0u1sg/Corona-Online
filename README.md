@@ -2,7 +2,7 @@
 
 Corona Online is a simple way to follow the progress of the Coronavirus (COVID-19) live.  
 This project use [disease-sh API](https://github.com/disease-sh)  
-[corona--web.herokuapp.com](httsp://corona--web.herokuapp.com/)
+[corona--web.herokuapp.com](https://corona--web.herokuapp.com/)
 
 # Badges
 
