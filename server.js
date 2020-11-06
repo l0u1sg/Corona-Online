@@ -9,7 +9,7 @@ app.use(express.static(__dirname + "/views"));
 app.get("/", (req, res) => {
   res.render("maintenance/index.ejs");
 });
-app.get("/beta", (req, res) => {
+app.get("/v3", (req, res) => {
   res.render("website/index.ejs");
 });
 
