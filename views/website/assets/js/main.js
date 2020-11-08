@@ -13,12 +13,14 @@ axios.get("https://corona.lmao.ninja/v2/all").then((res) => {
     const totalDeathsNb = formatNumber(totalDeaths)
     const totalRecoveriesNb = formatNumber(totalRecoveries)
     const activeCasesNb = formatNumber(activeCases)
-    // console.log(totalCase);
-    // console.log(totalDeaths);
-    // console.log(totalRecoveries);
-    // console.log(activeCases);
+    const todayCase = formatNumber(res.data.todayCases)
+    const todayDeaths = formatNumber(res.data.todayDeaths)
+    const todayRecovered = formatNumber(res.data.todayRecovered)
     document.getElementById("totalCaseTxt").innerHTML = totalCaseNb;
     document.getElementById("totalDeathsTxt").innerHTML = totalDeathsNb;
     document.getElementById("totalRecoveriesTxt").innerHTML = totalRecoveriesNb;
     document.getElementById("activeCasesTxt").innerHTML = activeCasesNb;
+    document.getElementById("todayCases").innerHTML = "+ " + todayCase;
+    document.getElementById("todayDeaths").innerHTML = "+ " + todayDeaths;
+    document.getElementById("todayRecovered").innerHTML = "+ " + todayRecovered;
 });

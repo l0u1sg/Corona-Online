@@ -881,7 +881,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 module.exports = defaults;
 
 }).call(this)}).call(this,require('_process'))
-},{"./adapters/http":2,"./adapters/xhr":2,"./helpers/normalizeHeaderName":23,"./utils":26,"_process":28}],17:[function(require,module,exports){
+},{"./adapters/http":2,"./adapters/xhr":2,"./helpers/normalizeHeaderName":23,"./utils":26,"_process":27}],17:[function(require,module,exports){
 'use strict';
 
 module.exports = function bind(fn, thisArg) {
@@ -1575,31 +1575,6 @@ module.exports = {
 };
 
 },{"./helpers/bind":17}],27:[function(require,module,exports){
-const axios = require("axios")
-
-
-axios.get("https://corona.lmao.ninja/v2/all").then((res) => {
-    function formatNumber(num) {
-        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
-      }
-    const totalCase = res.data.cases;
-    const totalDeaths = res.data.deaths;
-    const totalRecoveries = res.data.recovered;
-    const activeCases = res.data.active;
-    const totalCaseNb = formatNumber(totalCase)
-    const totalDeathsNb = formatNumber(totalDeaths)
-    const totalRecoveriesNb = formatNumber(totalRecoveries)
-    const activeCasesNb = formatNumber(activeCases)
-    // console.log(totalCase);
-    // console.log(totalDeaths);
-    // console.log(totalRecoveries);
-    // console.log(activeCases);
-    document.getElementById("totalCaseTxt").innerHTML = totalCaseNb;
-    document.getElementById("totalDeathsTxt").innerHTML = totalDeathsNb;
-    document.getElementById("totalRecoveriesTxt").innerHTML = totalRecoveriesNb;
-    document.getElementById("activeCasesTxt").innerHTML = activeCasesNb;
-});
-},{"axios":1}],28:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -1785,4 +1760,31 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}]},{},[27]);
+},{}],28:[function(require,module,exports){
+const axios = require("axios")
+
+
+axios.get("https://corona.lmao.ninja/v2/all").then((res) => {
+    function formatNumber(num) {
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+      }
+    const totalCase = res.data.cases;
+    const totalDeaths = res.data.deaths;
+    const totalRecoveries = res.data.recovered;
+    const activeCases = res.data.active;
+    const totalCaseNb = formatNumber(totalCase)
+    const totalDeathsNb = formatNumber(totalDeaths)
+    const totalRecoveriesNb = formatNumber(totalRecoveries)
+    const activeCasesNb = formatNumber(activeCases)
+    const todayCase = formatNumber(res.data.todayCases)
+    const todayDeaths = formatNumber(res.data.todayDeaths)
+    const todayRecovered = formatNumber(res.data.todayRecovered)
+    document.getElementById("totalCaseTxt").innerHTML = totalCaseNb;
+    document.getElementById("totalDeathsTxt").innerHTML = totalDeathsNb;
+    document.getElementById("totalRecoveriesTxt").innerHTML = totalRecoveriesNb;
+    document.getElementById("activeCasesTxt").innerHTML = activeCasesNb;
+    document.getElementById("todayCases").innerHTML = "+ " + todayCase;
+    document.getElementById("todayDeaths").innerHTML = "+ " + todayDeaths;
+    document.getElementById("todayRecovered").innerHTML = "+ " + todayRecovered;
+});
+},{"axios":1}]},{},[28]);
