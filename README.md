@@ -39,4 +39,4 @@ Visit http://localhost:3000 on your browser
 © Louis Gallet - 2020
 Based on a idea by Kyler Phillips
 
-Made in 🇫🇷 by l0u1sg with ❤️
+Made in  🇫🇷  by l0u1sg with ❤️
