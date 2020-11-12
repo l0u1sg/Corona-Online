@@ -98,7 +98,6 @@ body {
   font-family: "Calibre Web", system, -apple-system, BlinkMacSystemFont,
     "Helvetica Neue", "Lucida Grande";
   -webkit-font-smoothing: antialiased;
-  cursor: url("../img/cursor.png"), pointer;
 }
 
 .card-box {
@@ -1229,5 +1228,5 @@ label:nth-child(2):hover {
   font-weight: 600;
 }
 
-.badge-warning {
-}
+/* .badge-warning {
+} */
