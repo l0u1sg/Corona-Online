@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/louisgallet95/Corona-Online#readme",
   "dependencies": {
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "browserify": "^17.0.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
