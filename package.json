@@ -24,7 +24,7 @@
   "dependencies": {
     "axios": "^0.21.0",
     "browserify": "^17.0.0",
-    "ejs": "^3.1.5",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
     "http-error-pages": "^2.0.1",
     "method-override": "^3.0.0",
